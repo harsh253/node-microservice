@@ -37,7 +37,7 @@ app.post('/posts', async (req, res) => {
 
 
 app.post("/events", (req,res)=>{
-  console.trace("Event received in post : ", req.body.type);
+  console.log("Event received in post : ", req.body.type);
   res.send({})
 })
 

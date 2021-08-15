@@ -14,11 +14,10 @@ app.get("/posts", (req, res) => {
 
 app.post("/events", (req, res) => {
     const { type, data } = req.body;
-    let id = null;
+    
     switch (type) {
         case "PostCreated":
-            ({id} = data);
-            const { title } = data;
+            var { id, title } = data;
             posts[id] = {
                 id,
                 title,
@@ -27,12 +26,27 @@ app.post("/events", (req, res) => {
             break;
 
         case "CommentCreated":
-            ({id} = data);
-            const { content, postId } = data;
+            var { id, content, postId, status} = data;
             posts[postId].comments.push({
                 id,
-                content
+                content,
+                status
             })
+            break;
+
+        case "CommentUpdated":
+            var {id, content, postId, status} = data;
+            let updatedComments = posts[postId].comments.map((comment) => {
+                if(comment.id === id){
+                    return {
+                        ...comment,
+                        status,
+                        content
+                    }
+                }
+                return comment;
+            })
+            posts[postId].comments = updatedComments;
             break;
 
         default:
