@@ -14,5 +14,5 @@ spec:
     spec:
       containers:
       - name: posts
-        image: harsh253/posts:0.0.1
+        image: harsh253/posts:latest
   
