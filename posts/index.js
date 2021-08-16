@@ -9,7 +9,7 @@ app.use(cors());
 
 const posts = {};
 
-const EVENT_BUS_SERVICE_URL = "http://localhost:4005";
+const EVENT_BUS_SERVICE_URL = "http://event-bus-cluster-ip-srv:4005";
 
 app.get('/posts', (req, res) => {
   res.send(posts);
