@@ -1,0 +1,12 @@
+docker run <image> - Download image -> create -> start container
+docker ps - list all running containers
+docker ps --all - list all running and stopped containers
+docker system prune - delete all containers and cached images (mainly to reclaim space on your system)
+docker run -it <image_id> <command> - To override the default image command with <command>
+docker logs <container_id> - list all logs of a container
+docker kill <container_id> - kill a running container instantaneously (unsafe)
+docker stop <container_id> - safe way to stop a running container as it gives some time to container before actually stopping it. (might need to do some work on process end or save a state)
+docker exec <container_id> <command> - For executing any additional command (that the container does not comes packaged with) inside a running container
+docker exec -it <container_id> <command> - Same as above but additionally now we can provide text inputs(-i) and get outputs in pretty format(-t)
+docker logs <container_id> - print out logs of the <container_id>
+docker run -p <local_machine_port>:<container_port> <image_id> - For port forwarding , so that all requests that come at <local_machine_port> are redirected to <container_port>
