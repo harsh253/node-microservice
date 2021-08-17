@@ -5,15 +5,15 @@ const app = express();
 app.use(express.json());
 
 const POST_SERVICE_URL = "http://post-cluster-ip-srv:4000";
-const COMMENTS_SERVICE_URL = "http://localhost:4001";
-const QUERY_SERVICE_URL = "http://localhost:4002";
-const MODERATION_SERVICE_URL = "http://localhost:4003";
+const COMMENTS_SERVICE_URL = "http://comments-srv:4001";
+const QUERY_SERVICE_URL = "http://query-srv:4002";
+const MODERATION_SERVICE_URL = "http://moderation-srv:4003";
 
 const allServiceUrl = [
     POST_SERVICE_URL,
-    // COMMENTS_SERVICE_URL,
-    // QUERY_SERVICE_URL,
-    // MODERATION_SERVICE_URL
+    COMMENTS_SERVICE_URL,
+    QUERY_SERVICE_URL,
+    MODERATION_SERVICE_URL
 ];
 
 app.post("/events", (req,res)=>{
