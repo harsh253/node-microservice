@@ -4,7 +4,7 @@ const axios = require('axios');
 const app = express();
 app.use(express.json());
 
-const EVENT_BUS_SERVICE_URL = "http://localhost:4005";
+const EVENT_BUS_SERVICE_URL = "http://event-bus-cluster-ip-srv:4005";
 
 app.post("/events", async (req, res) => {
     const { type, data } = req.body;
