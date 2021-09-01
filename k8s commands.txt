@@ -4,3 +4,4 @@ kubectl logs <pod_name> - Get logs of the pod
 kubectl delete pod <pod_name> - Delete a pod. (! A pod can never be stopped because k8 assumes that if a pod is stopped , it was stopped due to some error and will restart that pod immediately. Hence, a pod can only be deleted)
 kubectl delete <object> <object_name>
 kubectl rollout restart deploymeny <deployment_name> - Restart a deployment
+kubectl create secret generic <secret-ref-name> --from-literal=<key>=<value> - Create a 'secret' kind of object to share secretes as env variables among pods
