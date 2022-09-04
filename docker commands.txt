@@ -3,6 +3,7 @@ docker ps - list all running containers
 docker ps --all - list all running and stopped containers
 docker system prune - delete all containers and cached images (mainly to reclaim space on your system)
 docker run -it <image_id> <command> - To override the default image command with <command>
+docker exec -t -i <container_id/container_name> /bin/bash - View Docker containers file system
 docker logs <container_id> - list all logs of a container
 docker kill <container_id> - kill a running container instantaneously (unsafe)
 docker stop <container_id> - safe way to stop a running container as it gives some time to container before actually stopping it. (might need to do some work on process end or save a state)
